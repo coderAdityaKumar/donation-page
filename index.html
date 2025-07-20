@@ -1,164 +1,187 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Donate at Nandgram Dham | Online temple Donation</title>
-    <link rel="stylesheet" href="style.css" />
-    <script
-      src="https://kit.fontawesome.com/885f36094b.js"
-      crossorigin="anonymous"
-    ></script>
-  </head>
-  <body class="body">
-    <!-- Navbar -->
-    <header class="header">
-      <nav class="navbar">
-        <a href="#">Home</a>
-        <a href="#">Mandir</a>
-        <a href="#">Prabhupada</a>
-        <a href="#">Philosophy</a>
-        <a href="#" class="logo"><img src="assets/logo.png" alt="logo" /></a>
-        <a href="#">Books</a>
-        <a href="#">Blog</a>
-        <a href="#">Festivals</a>
-        <a href="#">Donate</a>
-      </nav>
-    </header>
-
-    <!-- Navbar for small screens -->
-    <header class="header-mobile">
-      <a href="#" class="logo"><img src="assets/logo.png" alt="logo" /></a>
-      <label for="" class="menu">
-        <i class="fa-solid fa-bars"></i>
-      </label>
-      <nav class="mobile-navbar">
-        <a href="#">Home</a>
-        <a href="#">Mandir</a>
-        <a href="#">Prabhupada</a>
-        <a href="#">Philosophy</a>
-        <a href="#">Books</a>
-        <a href="#">Blog</a>
-        <a href="#">Festivals</a>
-        <a href="#">Donate</a>
-      </nav>
-    </header>
-
-    <!-- banner section -->
-    <section class="slides-container">
-      <div class="slides">
-        <img src="assets/1.webp" alt="" class="active slide" />
-        <img src="assets/2.webp" alt="" class="slide" />
-        <img src="assets/3.webp" alt="" class="slide" />
-        <img src="assets/4.webp" alt="" class="slide" />
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nandgram Dham | Divine Donations</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Sanskrit+Text:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <!-- Divine Particles Background -->
+  <div class="particles"></div>
+  
+  <!-- Floating Om Symbol -->
+  <div class="om-symbol">ॐ</div>
+  
+  <!-- Navbar -->
+  <header class="header">
+    <nav class="navbar">
+      <div class="nav-links">
+        <a href="#" class="nav-link"><i class="fas fa-home"></i> <span>Home</span></a>
+        <a href="#" class="nav-link"><i class="fas fa-temple"></i> <span>Mandir</span></a>
+        <a href="#" class="nav-link"><i class="fas fa-lotus"></i> <span>Prabhupada</span></a>
+        <a href="#" class="nav-link"><i class="fas fa-brain"></i> <span>Philosophy</span></a>
       </div>
-
-      <div class="buttons">
-        <span class="next">&#10095;</span>
-        <span class="prev">&#10094;</span>
+      <a href="#" class="logo">
+        <img src="assets/logo.png" alt="Nandgram Dham Logo">
+        <div class="logo-glow"></div>
+      </a>
+      <div class="nav-links">
+        <a href="#" class="nav-link"><i class="fas fa-book"></i> <span>Books</span></a>
+        <a href="#" class="nav-link"><i class="fas fa-blog"></i> <span>Blog</span></a>
+        <a href="#" class="nav-link"><i class="fas fa-festival"></i> <span>Festivals</span></a>
+        <a href="#" class="nav-link donate-btn"><i class="fas fa-hand-holding-heart"></i> <span>Donate</span></a>
       </div>
-    </section>
+    </nav>
+  </header>
 
-    <section class="donation-section">
-      <div class="container">
-        <h2 class="main-heading">Donation Is The Quality Of A Wise Person</h2>
+  <!-- Mobile Nav -->
+  <header class="header-mobile">
+    <a href="#" class="logo">
+      <img src="assets/logo.png" alt="Nandgram Dham Logo">
+      <div class="logo-glow"></div>
+    </a>
+    <button class="menu-toggle">
+      <i class="fas fa-bars"></i>
+    </button>
+    <nav class="mobile-nav">
+      <a href="#" class="nav-link"><i class="fas fa-home"></i> <span>Home</span></a>
+      <a href="#" class="nav-link"><i class="fa-solid fa-gopuram"></i> <span>Mandir</span></a>
+      <a href="#" class="nav-link"><i class="fa-solid fa-hands-praying"></i> <span>Prabhupada</span></a>
+      <a href="#" class="nav-link"><i class="fas fa-brain"></i> <span>Philosophy</span></a>
+      <a href="#" class="nav-link"><i class="fas fa-book"></i> <span>Books</span></a>
+      <a href="#" class="nav-link"><i class="fas fa-blog"></i> <span>Blog</span></a>
+      <a href="#" class="nav-link"><i class="fa-solid fa-wand-magic-sparkles"></i> <span>Festivals</span></a>
+      <a href="#" class="nav-link donate-btn"><i class="fas fa-hand-holding-heart"></i> <span>Donate</span></a>
+    </nav>
+  </header>
 
-        <p class="description">
-          You can donate us for Sudama Seva, Anna Daan, Gita-daan, Mandir
-          Nirman, Festival Support, Sadhu Bhojan, Food for Life and more.
-        </p>
-
-        <div class="verse-box">
-          <div class="verse-text">
-            <p class="sanskrit-verse">
-              यज्ञदानतप:कर्म न त्याज्यं कार्यमेव तत् ।<br />
-              यज्ञो दानं तपश्चैव पावनानि मनीषिणाम् ॥ BG 18.5 ॥
-            </p>
-            <p class="verse-translation">
-              As said in Bhagavad Gita 18.5 - acts of sacrifice, charity and
-              penance are not to be given up; they must be performed. Indeed,
-              sacrifice, charity and penance purify even the great souls.
-            </p>
+  <!-- Divine Slider -->
+  <section class="divine-slider">
+    <div class="slider-container">
+      <div class="slider-track">
+        <!-- Desktop Images -->
+        <div class="slide active" style="--img-desktop: url('assets/1.webp'); --img-mobile: url('assets/mobile/1.jpg')">
+          <div class="slide-content">
+            <h3 class="slide-title">Serve with Devotion</h3>
+            <p class="slide-text">Your contributions help sustain our sacred mission</p>
           </div>
         </div>
-
-        <div class="meaning-section">
-          <h3 class="meaning-heading">The meaning of "Daan"</h3>
-          <p>
-            In Hinduism, many writings lay foremost authority on the art of
-            "donating to help those in need." The Upanishads texts holding the
-            thoughtful concepts of Hinduism talk about "Daan" (which means
-            giving to somebody in suffering or required as an act of virtue).
-          </p>
-          <p>
-            The Upanishads states that the three aspects of a good person are
-          </p>
-
-          <div class="three-aspects">
-            <div class="aspect-card">
-              <h4>Damah</h4>
-              <p>Self-control</p>
-            </div>
-            <div class="aspect-card">
-              <h4>Daya</h4>
-              <p>Kindness or love for all life</p>
-            </div>
-            <div class="aspect-card active">
-              <h4>Daan</h4>
-              <p>Donation</p>
-            </div>
+        <div class="slide" style="--img-desktop: url('assets/2.webp'); --img-mobile: url('assets/mobile/2.webp')">
+          <div class="slide-content">
+            <h3 class="slide-title">Nourish the Soul</h3>
+            <p class="slide-text">Support our Annadanam program</p>
+          </div>
+        </div>
+        <div class="slide" style="--img-desktop: url('assets/3.webp'); --img-mobile: url('assets/mobile/3.webp')">
+          <div class="slide-content">
+            <h3 class="slide-title">Sacred Knowledge</h3>
+            <p class="slide-text">Help spread divine wisdom through Gita-daan</p>
+          </div>
+        </div>
+        <div class="slide" style="--img-desktop: url('assets/4.webp'); --img-mobile: url('assets/mobile/4.webp')">
+          <div class="slide-content">
+            <h3 class="slide-title">Divine Abode</h3>
+            <p class="slide-text">Contribute to our temple construction</p>
           </div>
         </div>
       </div>
-      <div class="donation-heading">
-          <h1>Donate For</h1>
-        </div>
+      <button class="slider-nav prev"><i class="fas fa-chevron-left"></i></button>
+      <button class="slider-nav next"><i class="fas fa-chevron-right"></i></button>
+      <div class="slider-dots"></div>
+    </div>
+  </section>
 
-      <div class="donation-types-container">
-        
-        <div class="donation-slider">
-          <div class="donation-slides" style="--img: url(assets/1.webp)">
-            <div class="content">
-              <a href="#donate" class="donate-btn">
-                <i class="fa-solid fa-heart"></i> Donate Now
-              </a>
-            </div>
+  <!-- Divine Donation Section -->
+  <section class="divine-section">
+    <div class="container">
+      <h2 class="section-title">Donation Is The Quality Of A Wise Person</h2>
+      <p class="section-subtitle">The Vishnu-smriti says,"The goddess of prosperity Laxmi lives in those who are charitable"</p>
+      
+      <div class="verse-container">
+        <div class="verse-card">
+          <div class="sanskrit">
+            <p>यज्ञदानतप:कर्म न त्याज्यं कार्यमेव तत् ।</p>
+            <p>यज्ञो दानं तपश्चैव पावनानि मनीषिणाम् ॥ BG 18.5 ॥</p>
           </div>
-          <div class="donation-slides" style="--img: url(assets/2.webp)">
-            <div class="content">
-              <a href="#donate" class="donate-btn">
-                <i class="fa-solid fa-heart"></i> Donate Now
-              </a>
-            </div>
+          <div class="translation">
+            <p>"Acts of sacrifice, charity and penance are not to be given up; they must be performed. Indeed, sacrifice, charity and penance purify even the great souls."</p>
+            <p class="reference">- Bhagavad Gita 18.5</p>
           </div>
-          <div class="donation-slides" style="--img: url(assets/3.webp)">
-            <div class="content">
-              <a href="#donate" class="donate-btn">
-                <i class="fa-solid fa-heart"></i> Donate Now
-              </a>
-            </div>
-          </div>
-          <div class="donation-slides" style="--img: url(assets/4.webp)">
-            <div class="content">
-              <a href="#donate" class="donate-btn">
-                <i class="fa-solid fa-heart"></i> Donate Now
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="buttons">
-          <span class="donation-prev"
-            ><i
-              class="fa-solid fa-arrow-right fa-rotate-180"
-              style="color: #ffffff"
-            ></i
-          ></span>
-          <span class="donation-next"
-            ><i class="fa-solid fa-arrow-right" style="color: #ffffff"></i
-          ></span>
         </div>
       </div>
-    </section>
-  </body>
+      
+      <div class="three-paths">
+        <h3 class="paths-title"> The Upanishads states that the three aspects of a good person are</h3>
+        <div class="paths-container">
+          <div class="path-card">
+            <div class="path-icon"><i class="fas fa-om"></i></div>
+            <h4>Damah</h4>
+            <p>Self-control and discipline</p>
+            <div class="path-glow"></div>
+          </div>
+          <div class="path-card active">
+            <div class="path-icon"><i class="fas fa-hands-helping"></i></div>
+            <h4>Daan</h4>
+            <p>Selfless giving</p>
+            <div class="path-glow"></div>
+          </div>
+          <div class="path-card">
+            <div class="path-icon"><i class="fas fa-heart"></i></div>
+            <h4>Daya</h4>
+            <p>Compassion for all beings</p>
+            <div class="path-glow"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Futuristic Donation Grid -->
+  <section class="donation-grid">
+    <h2 class="section-title">Ways to Contribute</h2>
+    <p class="section-subtitle">Choose your sacred offering</p>
+    
+    <div class="grid-container">
+      <div class="grid-item" style="--img: url('assets/mobile/1.jpg')">
+        <div class="item-content">
+          <h3>Sudama Seva</h3>
+          <p>Support the daily worship and maintenance of the deities</p>
+          <a href="#" class="divine-btn">Donate Now <i class="fas fa-lotus"></i></a>
+        </div>
+        <div class="item-glow"></div>
+      </div>
+      <div class="grid-item" style="--img: url('assets/mobile/2.webp')">
+        <div class="item-content">
+          <h3>Anna Daan</h3>
+          <p>Provide sacred food offerings to devotees and visitors</p>
+          <a href="#" class="divine-btn">Donate Now <i class="fas fa-lotus"></i></a>
+        </div>
+        <div class="item-glow"></div>
+      </div>
+      <div class="grid-item" style="--img: url('assets/mobile/3.webp')">
+        <div class="item-content">
+          <h3>Gita-daan</h3>
+          <p>Help distribute sacred scriptures worldwide</p>
+          <a href="#" class="divine-btn">Donate Now <i class="fas fa-lotus"></i></a>
+        </div>
+        <div class="item-glow"></div>
+      </div>
+      <div class="grid-item" style="--img: url('assets/mobile/4.webp')">
+        <div class="item-content">
+          <h3>Mandir Nirman</h3>
+          <p>Contribute to building this sacred abode</p>
+          <a href="#" class="divine-btn">Donate Now <i class="fas fa-lotus"></i></a>
+        </div>
+        <div class="item-glow"></div>
+      </div>
+    </div>
+  </section>
+
   <script src="script.js"></script>
+</body>
 </html>
