@@ -846,15 +846,22 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 10px;
 }
 
 .author-video button{
   background-color: white;
-    
   border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  width: 40px;
+}
+
+.author-video button i{
+  font-size: 20px;
   text-align: center;
-  height: 50px;
-  width: 50px;
 }
 
 .author-video button:hover{
