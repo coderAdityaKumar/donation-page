@@ -843,10 +843,14 @@ body {
 
 .author-video{
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .author-video button{
   background-color: white;
+    
   border-radius: 50%;
   text-align: center;
   height: 50px;
