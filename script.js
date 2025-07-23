@@ -75,11 +75,11 @@ function updateSlider() {
     // Update background image based on screen size
     if (index === currentSlide) {
       if (window.innerWidth <= 992) {
-        slide.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), ${slide.style.getPropertyValue(
+        slide.style.backgroundImage = ` ${slide.style.getPropertyValue(
           "--img-mobile"
         )}`;
       } else {
-        slide.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), ${slide.style.getPropertyValue(
+        slide.style.backgroundImage = ` ${slide.style.getPropertyValue(
           "--img-desktop"
         )}`;
       }
@@ -193,6 +193,157 @@ document
 
 window.addEventListener("scroll", animateOnScroll);
 animateOnScroll(); // Run once on load
+
+document.addEventListener("DOMContentLoaded", function () {
+  const carousel = document.querySelector(".privileges-carousel");
+  const prevBtn = document.querySelector(".prev-btn");
+  const nextBtn = document.querySelector(".next-btn");
+  const dotsContainer = document.querySelector(".carousel-dots");
+  const cards = document.querySelectorAll(".privilege-card");
+
+  let currentIndex = 0;
+  let autoScrollInterval;
+  let isAutoScrolling = true;
+  let isUserInteracting = false;
+
+  // Create dots
+  cards.forEach((_, index) => {
+    const dot = document.createElement("div");
+    dot.classList.add("dot");
+    if (index === 0) dot.classList.add("active");
+    dot.addEventListener("click", () => {
+      goToSlide(index);
+    });
+    dotsContainer.appendChild(dot);
+  });
+
+  const dots = document.querySelectorAll(".dot");
+
+  // Auto-scroll function
+  function startAutoScroll() {
+    if (isAutoScrolling) {
+      autoScrollInterval = setInterval(() => {
+        if (!isUserInteracting) {
+          nextSlide();
+        }
+      }, 3000);
+    }
+  }
+
+  function stopAutoScroll() {
+    clearInterval(autoScrollInterval);
+  }
+
+  function nextSlide() {
+    currentIndex = (currentIndex + 1) % cards.length;
+    updateCarousel();
+  }
+
+  function prevSlide() {
+    currentIndex = (currentIndex - 1 + cards.length) % cards.length;
+    updateCarousel();
+  }
+
+  function goToSlide(index) {
+    currentIndex = index;
+    updateCarousel();
+  }
+
+  function updateCarousel() {
+    const cardWidth = cards[0].offsetWidth + 25; // card width + gap
+    carousel.scrollTo({
+      left: currentIndex * cardWidth,
+      behavior: "smooth",
+    });
+
+    // Update active dot
+    dots.forEach((dot, index) => {
+      dot.classList.toggle("active", index === currentIndex);
+    });
+  }
+
+  // Event listeners
+  prevBtn.addEventListener("click", () => {
+    isUserInteracting = true;
+    stopAutoScroll();
+    prevSlide();
+    setTimeout(() => {
+      isUserInteracting = false;
+      startAutoScroll();
+    }, 5000);
+  });
+
+  nextBtn.addEventListener("click", () => {
+    isUserInteracting = true;
+    stopAutoScroll();
+    nextSlide();
+    setTimeout(() => {
+      isUserInteracting = false;
+      startAutoScroll();
+    }, 5000);
+  });
+
+  // Touch events for mobile
+  let touchStartX = 0;
+  let touchEndX = 0;
+
+  carousel.addEventListener(
+    "touchstart",
+    (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+      isUserInteracting = true;
+      stopAutoScroll();
+    },
+    { passive: true }
+  );
+
+  carousel.addEventListener(
+    "touchend",
+    (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      handleSwipe();
+      setTimeout(() => {
+        isUserInteracting = false;
+        startAutoScroll();
+      }, 5000);
+    },
+    { passive: true }
+  );
+
+  function handleSwipe() {
+    const threshold = 50;
+    if (touchEndX < touchStartX - threshold) {
+      nextSlide();
+    } else if (touchEndX > touchStartX + threshold) {
+      prevSlide();
+    }
+  }
+
+  // Initialize
+  startAutoScroll();
+
+  // Pause auto-scroll when mouse enters carousel
+  carousel.addEventListener("mouseenter", () => {
+    isUserInteracting = true;
+    stopAutoScroll();
+  });
+
+  // Resume auto-scroll when mouse leaves carousel
+  carousel.addEventListener("mouseleave", () => {
+    isUserInteracting = false;
+    startAutoScroll();
+  });
+
+  // Update current index on manual scroll
+  carousel.addEventListener("scroll", () => {
+    const cardWidth = cards[0].offsetWidth + 25;
+    currentIndex = Math.round(carousel.scrollLeft / cardWidth);
+
+    dots.forEach((dot, index) => {
+      dot.classList.toggle("active", index === currentIndex);
+    });
+  });
+});
 
 // Testimonial section
 
@@ -368,28 +519,29 @@ const testimonialVideo = document.querySelector(".tst-video");
 const testimonialVideoContainer = document.querySelector(
   ".tst-video-container"
 );
-const testimonialVideoClose=document.querySelector(".tst-video-close");
+const testimonialVideoClose = document.querySelector(".tst-video-close");
 
 function playTestimonialVideo(name) {
   if (name == "narendra-modi") {
-    testimonialVideo.src = "https://www.youtube.com/embed/4GWVL-hl7GM?si=hen37IKMGqrHyNH-";
+    testimonialVideo.src =
+      "https://www.youtube.com/embed/4GWVL-hl7GM?si=hen37IKMGqrHyNH-";
     testimonialVideoContainer.style.display = "flex";
-  }
-  else if(name=="hema-malini"){
-    testimonialVideo.src = "https://www.youtube.com/embed/ezOcl3XJf9g?si=_yshbpoWi-NP-ezV";
+  } else if (name == "hema-malini") {
+    testimonialVideo.src =
+      "https://www.youtube.com/embed/ezOcl3XJf9g?si=_yshbpoWi-NP-ezV";
     testimonialVideoContainer.style.display = "flex";
-  }
-  else if(name=="pranab-mukharjee"){
-    testimonialVideo.src = "https://www.youtube.com/embed/SzqHTmaS2XU?si=6iX0h8dA2keaa_6s";
+  } else if (name == "pranab-mukharjee") {
+    testimonialVideo.src =
+      "https://www.youtube.com/embed/SzqHTmaS2XU?si=6iX0h8dA2keaa_6s";
     testimonialVideoContainer.style.display = "flex";
-  }
-  else if(name=="ram-nath-kobind"){
-    testimonialVideo.src = "https://www.youtube.com/embed/kaROX0CzQiI?si=bG3QGqv1gLBVg0s8";
+  } else if (name == "ram-nath-kobind") {
+    testimonialVideo.src =
+      "https://www.youtube.com/embed/kaROX0CzQiI?si=bG3QGqv1gLBVg0s8";
     testimonialVideoContainer.style.display = "flex";
   }
 }
 
-function closeTestimonialVideo(){
-  testimonialVideoContainer.style.display="none";
-  testimonialVideo.src="";
+function closeTestimonialVideo() {
+  testimonialVideoContainer.style.display = "none";
+  testimonialVideo.src = "";
 }
