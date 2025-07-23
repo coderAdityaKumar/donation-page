@@ -267,20 +267,12 @@ document.addEventListener("DOMContentLoaded", function () {
     isUserInteracting = true;
     stopAutoScroll();
     prevSlide();
-    setTimeout(() => {
-      isUserInteracting = false;
-      startAutoScroll();
-    }, 5000);
   });
 
   nextBtn.addEventListener("click", () => {
     isUserInteracting = true;
     stopAutoScroll();
     nextSlide();
-    setTimeout(() => {
-      isUserInteracting = false;
-      startAutoScroll();
-    }, 5000);
   });
 
   // Touch events for mobile
@@ -297,27 +289,6 @@ document.addEventListener("DOMContentLoaded", function () {
     { passive: true }
   );
 
-  carousel.addEventListener(
-    "touchend",
-    (e) => {
-      touchEndX = e.changedTouches[0].screenX;
-      handleSwipe();
-      setTimeout(() => {
-        isUserInteracting = false;
-        startAutoScroll();
-      }, 5000);
-    },
-    { passive: true }
-  );
-
-  function handleSwipe() {
-    const threshold = 50;
-    if (touchEndX < touchStartX - threshold) {
-      nextSlide();
-    } else if (touchEndX > touchStartX + threshold) {
-      prevSlide();
-    }
-  }
 
   // Initialize
   startAutoScroll();
@@ -344,6 +315,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
 
 // Testimonial section
 
