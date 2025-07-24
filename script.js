@@ -517,3 +517,47 @@ function closeTestimonialVideo() {
   testimonialVideoContainer.style.display = "none";
   testimonialVideo.src = "";
 }
+
+
+
+
+// Footer section 
+document.addEventListener('DOMContentLoaded', function() {
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+
+    // Donation button animation
+    const donateBtn = document.querySelector('.donate-btn');
+    if (donateBtn) {
+        donateBtn.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-2px)';
+            this.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.2)';
+        });
+        
+        donateBtn.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0)';
+            this.style.boxShadow = 'none';
+        });
+    }
+
+    // Current year for copyright
+    const copyrightElement = document.querySelector('.copyright');
+    if (copyrightElement) {
+        const currentYear = new Date().getFullYear();
+        copyrightElement.textContent = copyrightElement.textContent.replace('2023', currentYear);
+    }
+});
