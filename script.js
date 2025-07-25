@@ -29,6 +29,18 @@ mobileNav.querySelectorAll(".nav-link").forEach((link) => {
   });
 });
 
+
+
+
+
+
+
+
+
+
+
+
+
 // Initialize Slider
 let currentSlide = 0;
 const slideWidth = slides[0].clientWidth;
@@ -194,6 +206,142 @@ document
 window.addEventListener("scroll", animateOnScroll);
 animateOnScroll(); // Run once on load
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Tab functionality
+  const tabButtons = document.querySelectorAll('.tab-btn');
+  const tabContents = document.querySelectorAll('.tab-content');
+  const tabIndicator = document.querySelector('.tab-indicator');
+  
+  // Set initial tab indicator position
+  const activeTab = document.querySelector('.tab-btn.active');
+  if (activeTab) {
+    const tabRect = activeTab.getBoundingClientRect();
+    const navRect = activeTab.parentElement.getBoundingClientRect();
+    tabIndicator.style.width = `${tabRect.width}px`;
+    tabIndicator.style.left = `${tabRect.left - navRect.left}px`;
+  }
+  
+  // Tab switching
+  tabButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const tabId = button.getAttribute('data-tab');
+      
+      // Update active tab button
+      tabButtons.forEach(btn => btn.classList.remove('active'));
+      button.classList.add('active');
+      
+      // Update tab indicator position
+      const tabRect = button.getBoundingClientRect();
+      const navRect = button.parentElement.getBoundingClientRect();
+      tabIndicator.style.width = `${tabRect.width}px`;
+      tabIndicator.style.left = `${tabRect.left - navRect.left}px`;
+      
+      // Show corresponding content
+      tabContents.forEach(content => {
+        content.classList.remove('active');
+        if (content.id === tabId) {
+          content.classList.add('active');
+        }
+      });
+      
+      // Play subtle transition effect
+      const activeContent = document.getElementById(tabId);
+      activeContent.style.animation = 'none';
+      void activeContent.offsetWidth; // Trigger reflow
+      activeContent.style.animation = 'fadeIn 0.5s ease';
+    });
+  });
+  
+  // Make tabs scrollable on mobile if needed
+  const tabNav = document.querySelector('.tab-nav');
+  if (tabNav) {
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+    
+    tabNav.addEventListener('mousedown', (e) => {
+      isDown = true;
+      startX = e.pageX - tabNav.offsetLeft;
+      scrollLeft = tabNav.scrollLeft;
+    });
+    
+    tabNav.addEventListener('mouseleave', () => {
+      isDown = false;
+    });
+    
+    tabNav.addEventListener('mouseup', () => {
+      isDown = false;
+    });
+    
+    tabNav.addEventListener('mousemove', (e) => {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - tabNav.offsetLeft;
+      const walk = (x - startX) * 2;
+      tabNav.scrollLeft = scrollLeft - walk;
+    });
+    
+    // Touch support for mobile
+    tabNav.addEventListener('touchstart', (e) => {
+      isDown = true;
+      startX = e.touches[0].pageX - tabNav.offsetLeft;
+      scrollLeft = tabNav.scrollLeft;
+    });
+    
+    tabNav.addEventListener('touchend', () => {
+      isDown = false;
+    });
+    
+    tabNav.addEventListener('touchmove', (e) => {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.touches[0].pageX - tabNav.offsetLeft;
+      const walk = (x - startX) * 2;
+      tabNav.scrollLeft = scrollLeft - walk;
+    });
+  }
+  
+  // Add hover effects to donation cards
+  const donationCards = document.querySelectorAll('.donation-card');
+  donationCards.forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      
+      card.querySelector('.card-glow').style.backgroundPosition = `${x}px ${y}px`;
+    });
+  });
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Donor privileges section 
 document.addEventListener("DOMContentLoaded", function () {
   const carousel = document.querySelector(".privileges-carousel");
   const prevBtn = document.querySelector(".prev-btn");
@@ -315,6 +463,19 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // Testimonial section
