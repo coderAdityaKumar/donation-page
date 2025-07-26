@@ -764,13 +764,20 @@ body {
     font-size: 1.8rem;
   }
 
+  .tab-nav{
+    border-radius: 0px;
+  }
+
   .tab-btn {
     padding: 0.5rem;
     font-size: 0.7rem;
+    text-align: center;
+    display: flex;
+    justify-content: center;
   }
 
   .tab-btn i {
-    display: none;
+    
   }
 
   .donation-grid {
