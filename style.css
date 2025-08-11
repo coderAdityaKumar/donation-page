@@ -1,4 +1,4 @@
-/* Divine Color Scheme */
+
 :root {
   --divine-gold: #ffd700;
   --sacred-orange: #ff8c42;
@@ -19,7 +19,7 @@
   );
 }
 
-/* Base Styles */
+
 * {
   margin: 0;
   padding: 0;
@@ -34,7 +34,19 @@ body {
   position: relative;
 }
 
-/* Divine Particles Background */
+
+
+
+
+
+
+
+
+
+
+
+
+/* Particles Background */
 .particles {
   position: fixed;
   top: 0;
@@ -47,7 +59,20 @@ body {
   z-index: -1;
 }
 
-/* Floating Om Symbol */
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Floating logo */
 .floating-logo {
   position: fixed;
   bottom: 30px;
@@ -69,7 +94,21 @@ body {
   }
 }
 
-/* Navbar Styles */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Navbar  */
 .header {
   position: fixed;
   top: 0;
@@ -182,6 +221,23 @@ body {
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(255, 204, 51, 0.4);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* Mobile Nav */
 .header-mobile {
@@ -336,7 +392,22 @@ body {
   transform: scale(1.2);
 }
 
-/* Divine Section */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Donation Section */
 .divine-section {
   padding: 6rem 2rem;
   position: relative;
@@ -513,7 +584,22 @@ body {
   opacity: 1;
 }
 
-/* Futuristic Spiritual Donation Grid */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Donation Grid */
 .donations-container {
   position: relative;
   max-width: 1200px;
@@ -1081,6 +1167,25 @@ body {
   }
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* Testimonial section  */
 
 .tst-section {
@@ -1116,7 +1221,7 @@ body {
   display: flex;
   transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   will-change: transform;
-  padding: 5px 0; /* Prevents card clipping */
+  padding: 5px 0;
 }
 
 /* Individual Testimonial Cards */
@@ -1126,7 +1231,7 @@ body {
   box-sizing: border-box;
   transition: opacity 0.4s ease, transform 0.4s ease;
   opacity: 1;
-  min-height: 320px; /* Fixed height for consistency */
+  min-height: 320px; 
 }
 
 .tst-testimonial-card.active {
@@ -1479,6 +1584,24 @@ button:hover {
     height: 300px;
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* Footer Section */
 .footer-section {

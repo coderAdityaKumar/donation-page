@@ -682,6 +682,20 @@ function closeTestimonialVideo() {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // Footer section 
 document.addEventListener('DOMContentLoaded', function() {
     // Smooth scrolling for anchor links
