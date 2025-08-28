@@ -9,6 +9,8 @@ const dotsContainer = document.querySelector(".slider-dots");
 const pathCards = document.querySelectorAll(".path-card");
 const gridItems = document.querySelectorAll(".grid-item");
 
+
+
 // Mobile Menu Toggle
 menuToggle.addEventListener("click", () => {
   mobileNav.classList.toggle("active");
@@ -57,6 +59,7 @@ function createDots() {
     dotsContainer.appendChild(dot);
   });
 }
+
 
 // Auto slide change
 let slideInterval = setInterval(nextSlide, 5000);

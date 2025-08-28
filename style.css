@@ -639,6 +639,7 @@ body {
   overflow-x: auto;
   scrollbar-width: none;
   display: grid;
+  border-radius: 10PX;
 
   background: var(--sacred-gradient);
 }
@@ -665,10 +666,12 @@ body {
   color: #d1d1e9;
   font-size: 0.9rem;
   font-weight: 600;
+  justify-content: center;
   border-radius: 30px;
   cursor: pointer;
   transition: all 0.3s ease;
   display: flex;
+  text-align: center;
   align-items: center;
   gap: 0.5rem;
   white-space: nowrap;
@@ -1790,6 +1793,7 @@ button:hover {
   font-size: 24px;
   color: rgba(255, 255, 255, 0.7);
 }
+
 
 .payment-methods i:hover {
   color: #d4af37;
